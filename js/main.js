@@ -53,16 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, duration);
     };
 
-    // --- Demo Button ---
-    if (demoBtn) {
-        demoBtn.addEventListener('click', () => {
-            const msg = currentLang === 'es' ?
-                'Cargando datos de sensores...' :
-                'Loading sensor data...';
-            showNotification(msg);
-        });
-    }
-
     // Initial greeting (optional)
     setTimeout(() => {
         showNotification(currentLang === 'es' ? 'Bienvenido a LAND-CASCADES' : 'Welcome to LAND-CASCADES');
