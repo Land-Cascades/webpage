@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LAND-CASCADES: Dinámica de deslizamientos y peligros en cascada en los Andes. Plataforma de investigación académica.">
+    <title>LAND-CASCADES | Dinámica de Deslizamientos en los Andes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-container">
+        <header>
+            <div class="nav-container">
+                <div class="logo">
+                    <h1 data-en="LAND-CASCADES" data-es="LAND-CASCADES">LAND-CASCADES</h1>
+                </div>
+                <nav>
+                    <ul id="main-nav">
+                        <li><a href="#inicio" data-en="Home" data-es="Inicio">Inicio</a></li>
+                        <li><a href="#investigacion" data-en="Research" data-es="Investigación">Investigación</a></li>
+                        <li><a href="#datos" data-en="Data" data-es="Datos">Datos</a></li>
+                        <li><a href="#contacto" data-en="Contact" data-es="Contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <button id="lang-switch" class="lang-toggle" aria-label="Cambiar idioma">English</button>
+            </div>
+        </header>
+
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2 data-en="Landslide Dynamics and Cascading Hazards"
+                    data-es="Dinámica de Deslizamientos y Peligros en Cascada">Dinámica de Deslizamientos y Peligros en
+                    Cascada</h2>
+                <p data-en="Academic research on natural hazards in the Andean region."
+                    data-es="Investigación académica sobre peligros naturales en la región Andina.">Investigación
+                    académica sobre peligros naturales en la región Andina.</p>
+            </div>
+        </section>
+
+        <main id="main-content">
+            <section id="investigacion">
+                <h3 data-en="Our Research" data-es="Nuestra Investigación">Nuestra Investigación</h3>
+                <div class="section-grid">
+                    <article class="card">
+                        <h4 data-en="Cascading Hazards" data-es="Peligros en Cascada">Peligros en Cascada</h4>
+                        <p data-en="Analysis of multi-hazard processes triggered by landslides."
+                            data-es="Análisis de procesos multiriesgo desencadenados por deslizamientos.">Análisis de
+                            procesos multiriesgo desencadenados por deslizamientos.</p>
+                    </article>
+                    <article class="card">
+                        <h4 data-en="Andean Dynamics" data-es="Dinámica Andina">Dinámica Andina</h4>
+                        <p data-en="Study of tectonic and climatic factors in the Andes."
+                            data-es="Estudio de factores tectónicos y climáticos en los Andes.">Estudio de factores
+                            tectónicos y climáticos en los Andes.</p>
+                    </article>
+                    <article class="card">
+                        <h4 data-en="Risk Mitigation" data-es="Mitigación de Riesgos">Mitigación de Riesgos</h4>
+                        <p data-en="Developing strategies for disaster risk reduction."
+                            data-es="Desarrollo de estrategias para la reducción del riesgo de desastres.">Desarrollo de
+                            estrategias para la reducción del riesgo de desastres.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="datos" style="margin-top: 4rem;">
+                <h3 data-en="Open Data" data-es="Datos Abiertos">Datos Abiertos</h3>
+                <p data-en="Access to our sensor networks and research datasets."
+                    data-es="Acceso a nuestras redes de sensores y conjuntos de datos de investigación.">Acceso a
+                    nuestras redes de sensores y conjuntos de datos de investigación.</p>
+                <div style="margin-top: 2rem;">
+                    <button class="action-btn" id="btn-demo-notify" data-en="View Sensor Data"
+                        data-es="Ver Datos de Sensores"
+                        style="background: var(--color-orange); color: white; border: none; padding: 1rem 2rem; border-radius: var(--border-radius); cursor: pointer;">
+                        Ver Datos de Sensores
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer id="contacto">
+            <p>&copy; 2026 LAND-CASCADES Project. Andes Research Initiative.</p>
+            <p data-en="Dedicated to understanding landslide dynamics."
+                data-es="Dedicado a entender la dinámica de deslizamientos.">Dedicado a entender la dinámica de
+                deslizamientos.</p>
+        </footer>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
