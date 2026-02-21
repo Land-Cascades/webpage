@@ -1,0 +1,10 @@
+# Project-specific ignores
+AGENT.md
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDES
+.vscode/
+.idea/
