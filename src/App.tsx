@@ -19,6 +19,10 @@ import {
   Video
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import atuelImg from './assets/images/atuel.jpg';
+import bayaImg from './assets/images/baya.jpg';
+import lagoImg from './assets/images/lago.png';
+import sosneadoImg from './assets/images/sosneado.png';
 
 // --- i18n Dictionary ---
 const dict = {
@@ -236,8 +240,7 @@ const HomePage = ({ onCourseClick, lang, key }: { onCourseClick: () => void, lan
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(10, 15, 22, 0.6) 0%, rgba(10, 15, 22, 1) 100%), url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop")',
-            referrerPolicy: 'no-referrer'
+            backgroundImage: `linear-gradient(rgba(10, 15, 22, 0.6) 0%, rgba(10, 15, 22, 1) 100%), url(${sosneadoImg})`,
           }}
         />
         <div className="relative z-10 flex flex-col gap-6 max-w-3xl items-center mt-8">
@@ -327,8 +330,7 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(0deg, rgba(10, 15, 22, 1) 0%, rgba(10, 15, 22, 0.6) 50%, rgba(10, 15, 22, 0.2) 100%), url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop")',
-            referrerPolicy: 'no-referrer'
+            backgroundImage: `linear-gradient(0deg, rgba(10, 15, 22, 1) 0%, rgba(10, 15, 22, 0.6) 50%, rgba(10, 15, 22, 0.2) 100%), url(${lagoImg})`,
           }}
         />
         <div className="relative z-10 flex flex-col gap-4 max-w-4xl mx-auto w-full">
