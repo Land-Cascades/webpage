@@ -1,10 +1,8 @@
-# Project-specific ignores
-AGENT.md
-
-# Operating System files
+node_modules/
+build/
+dist/
+coverage/
 .DS_Store
-Thumbs.db
-
-# IDES
-.vscode/
-.idea/
+*.log
+.env*
+!.env.example
