@@ -23,6 +23,7 @@ import atuelImg from './assets/images/atuel.jpg';
 import bayaImg from './assets/images/baya.jpg';
 import lagoImg from './assets/images/lago.png';
 import sosneadoImg from './assets/images/sosneado.png';
+import inquaLogoImg from './assets/images/inqua_logo.jpg';
 
 // --- i18n Dictionary ---
 const dict = {
@@ -257,7 +258,7 @@ const Navbar = ({ onMenuClick, showBack, onBack, lang, setLang }: { onMenuClick?
           <Mountain className="text-primary" size={24} />
           <div className="flex flex-col">
             <h2 className="text-sm font-black leading-none tracking-tight uppercase">LAND-CASCADES</h2>
-            <span className="text-[8px] text-slate-400 font-medium uppercase">{dict[lang].fundedBy} INQUA</span>
+            <span className="text-[8px] text-slate-400 font-medium uppercase">{dict[lang].fundedBy} <a href="https://inqua.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">INQUA</a></span>
           </div>
         </div>
       )}
@@ -269,9 +270,9 @@ const Navbar = ({ onMenuClick, showBack, onBack, lang, setLang }: { onMenuClick?
 
     <div className="flex items-center gap-4">
       {!showBack && (
-        <div className="hidden sm:flex items-center bg-white/5 px-2 py-1 rounded border border-white/10">
-          <span className="text-[10px] font-black text-primary tracking-tighter">INQUA</span>
-        </div>
+        <a href="https://inqua.org/" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center bg-white/5 px-2 py-1 rounded border border-white/10 hover:bg-white/10 transition-colors">
+          <img src={inquaLogoImg} alt="INQUA" className="h-4 object-contain" />
+        </a>
       )}
 
       {/* Botón Selector de Idioma Moderno */}
@@ -446,7 +447,7 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(0deg, rgba(10, 15, 22, 0.95) 0%, rgba(10, 15, 22, 0.3) 60%, rgba(10, 15, 22, 0) 100%), url(${lagoImg})`,
+            backgroundImage: `linear-gradient(rgba(10, 15, 22, 0.3) 0%, rgba(10, 15, 22, 0.85) 100%), url(${lagoImg})`,
           }}
         />
         <div className="relative z-10 flex flex-col gap-4 max-w-4xl mx-auto w-full">
@@ -702,7 +703,9 @@ const RedPage = ({ lang, key }: { lang: Lang, key?: string }) => {
         <p className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8">{t.fundedBy}</p>
         <div className="flex flex-col items-center gap-6">
           <div className="bg-white/5 p-8 rounded-3xl border border-white/10 inline-flex flex-col items-center shadow-2xl backdrop-blur-md">
-            <span className="text-white font-black text-4xl tracking-tighter mix-blend-screen">INQUA</span>
+            <a href="https://inqua.org/" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+              <img src={inquaLogoImg} alt="INQUA Logo" className="h-16 object-contain mix-blend-screen" />
+            </a>
             <div className="h-1.5 w-16 bg-primary rounded-full mt-4 mb-4" />
             <span className="text-xs text-slate-400 font-medium max-w-[200px] leading-relaxed">
               {t.inquaDesc}
