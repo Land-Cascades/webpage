@@ -68,7 +68,7 @@ const dict = {
     courseSectionTitle: 'El Curso',
     courseIntro: 'La Formación Científica y Técnica LAND-CASCADES sobre Lagos Represados por Deslizamientos está planeada para llevarse a cabo durante diciembre de 2026 en Mendoza, Argentina.',
     courseDurationTitle: 'Duración y Formato',
-    courseLength: 'Duración: 4 días (puede adaptarse a 3 o 5 días)',
+    courseLength: 'Duración: 4 días',
     courseFormat: 'Formato: Híbrido (módulos presenciales + virtuales) incluyendo un seminario de formación y una excursión de campo',
     courseLocation: 'Ubicación: Universidad Nacional de Cuyo, Mendoza, Argentina',
     courseFieldTrip: 'Salida de campo: A lo largo de los sitios del Río Mendoza-Aconcagua cerca de paleo-deslizamientos, deslizamientos activos, lagos represados y depósitos de inundación por desembalse.',
@@ -176,8 +176,8 @@ const dict = {
     // Course Section - Intro
     courseSectionTitle: 'The Course',
     courseIntro: 'The LAND-CASCADES Scientific and Technical Training on Landslide Dammed Lakes is planned to take place during November 2026 in Mendoza, Argentina.',
-    courseDurationTitle: '4.3. Duration and Format',
-    courseLength: 'Duration: 4 days (can be adapted to 3 or 5 days)',
+    courseDurationTitle: 'Duration and Format',
+    courseLength: 'Duration: 4 days',
     courseFormat: 'Format: Hybrid (in-person + virtual modules) including a training seminar and a field excursion',
     courseLocation: 'Location: National University of Cuyo, Mendoza, Argentina',
     courseFieldTrip: 'Field trip: Along the Mendoza-Aconcagua River sites near paleo-landslides, active landslides, dammed lakes, and outburst flood deposits.',
@@ -440,7 +440,7 @@ const HomePage = ({ onCourseClick, lang, key }: { onCourseClick: () => void, lan
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 bg-primary/20 text-primary text-xs font-bold px-5 py-2 rounded-full border border-primary/30 uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(255,87,34,0.3)]"
+            className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-300 text-xs font-bold px-5 py-2 rounded-full border border-blue-500/20 uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(59,130,246,0.15)] backdrop-blur-md"
           >
             <Globe size={14} />
             {t.network}
