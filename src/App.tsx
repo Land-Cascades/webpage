@@ -50,6 +50,64 @@ const dict = {
     course: 'Curso',
     networkTab: 'La Red',
     resources: 'Recursos',
+    // Network Section
+    networkTitle: 'La Red',
+    networkDesc1: 'La Red Internacional de Investigación LAND-CASCADES estará enfocada en el avance del entendimiento global y la resiliencia frente a las amenazas por lagos represados por deslizamientos, con énfasis principal en la cordillera de los Andes.',
+    networkDesc2: 'La red logra esto a través de investigación interdisciplinaria, intercambio de datos y desarrollo de capacidades, promoviendo la excelencia científica en el estudio del represamiento natural inducido por deslizamientos y la dinámica de las inundaciones por desembalse. LAND-CASCADES facilitará una colaboración internacional en geociencias, hidrología, ingeniería y gestión del riesgo de desastres.',
+    networkDesc3: 'El objetivo general de LAND-CASCADES es establecer un marco transfronterizo integral para comprender y mitigar una de las amenazas naturales más complejas y destructivas en regiones montañosas. Este ambicioso proyecto busca unificar investigadores y profesionales a nivel mundial, fomentando la colaboración y el intercambio de conocimientos para avanzar en nuestra comprensión y capacidad de respuesta ante deslizamientos en estos entornos.',
+    networkDesc4: 'Esta base sólida facilitará la estandarización de metodologías para la evaluación de amenazas, monitoreo y modelación de rupturas en una variedad de terrenos y contextos climáticos. El intercambio de conocimientos entre instituciones académicas, agencias gubernamentales y comunidades locales permitirá mejorar la preparación y respuesta de las comunidades de montaña vulnerables, ayudando a reducir el impacto de las amenazas naturales.',
+
+    // Course Section - Intro
+    courseSectionTitle: 'El Curso',
+    courseIntro: 'La Formación Científica y Técnica LAND-CASCADES sobre Lagos Represados por Deslizamientos está planeada para llevarse a cabo durante noviembre de 2026 en Mendoza, Argentina.',
+    courseDurationTitle: '4.3. Duración y Formato',
+    courseLength: 'Duración: 4 días (puede adaptarse a 3 o 5 días)',
+    courseFormat: 'Formato: Híbrido (módulos presenciales + virtuales) incluyendo un seminario de formación y una excursión de campo',
+    courseLocation: 'Ubicación: Universidad Nacional de Cuyo, Mendoza, Argentina',
+    courseFieldTrip: 'Salida de campo: A lo largo de los sitios del Río Mendoza-Aconcagua cerca de paleo-deslizamientos, deslizamientos activos, lagos represados y depósitos de inundación por desembalse.',
+
+    // Course Section - Activities
+    courseActivitiesTitle: '4.3. Plan de Actividades',
+    courseActivitiesIntro: 'Este taller incluirá un curso de capacitación durante 1-2 días para estudiantes de doctorado e investigadores jóvenes (ECRs), y una salida de campo a través de los Andes desde Mendoza (Argentina) hasta Los Andes (Chile).',
+    courseSeminarsTitle: 'a. Seminarios del curso de capacitación',
+    courseDay1Title: 'Primer día',
+    courseDay1Morning: 'Mañana - Fundamentos y Contexto Global',
+    courseDay1MorningItems: [
+      'Introducción a procesos de deslizamiento y mecanismos de represamiento',
+      'Tipos de represamiento',
+      'Casos de estudio históricos',
+      'Distribución global e importancia',
+      'Discusión grupal: vulnerabilidades regionales'
+    ],
+    courseDay1Afternoon: 'Tarde - Aspectos Geotécnicos e Hidrológicos',
+    courseDay1AfternoonItems: [
+      'Estabilidad de laderas y mecánica de fallas',
+      'Transporte de sedimentos y dinámica del embalse',
+      'Modelamiento hidrológico de la formación de lagos',
+      'Tipos de ruptura de presas',
+      'Práctica: Índices de estabilidad de presas'
+    ],
+    courseDay2Title: 'Segundo día',
+    courseDay2Morning: 'Mañana - Sensores Remotos y Aplicaciones SIG',
+    courseDay2MorningItems: [
+      'Interpretación de imágenes satelitales (ej. Sentinel, Landsat)',
+      'Análisis de DEM y estimación de volumen de la presa',
+      'Mapeo de amenazas basado en SIG',
+      'Sesión de laboratorio: mapeo de un lago represado real'
+    ],
+    courseDay2Afternoon: 'Tarde - Evaluación de Riesgos y Modelación de Rupturas',
+    courseDay2AfternoonItems: [
+      'Escenarios de ruptura de presa y tránsito de crecientes',
+      'Uso de HEC-RAS, FLO-2D o herramientas similares',
+      'Análisis de vulnerabilidad y exposición',
+      'Práctica: simular un evento de inundación por desembalse'
+    ],
+    courseFieldTitle: 'b. Salida de Campo Binacional a través de los Andes (32°S)',
+    courseFieldValley1: 'Valle del Río Mendoza (Argentina)',
+    courseFieldValley2: 'Valle del Río Las Cuevas (Argentina)',
+    courseFieldValley3: 'Valle del Río Aconcagua (Chile)',
+    courseFieldValley4: 'Valle del Río Blanco (Argentina)',
+    courseFieldReturn: 'Retorno a Mendoza',
     courseDescTitle: 'Descripción del Curso',
     courseDesc: 'Este programa intensivo aborda la dinámica compleja de las presas generadas por deslizamientos y los peligros en cascada asociados. Los participantes explorarán metodologías innovadoras para la evaluación de riesgos, integrando estudios de caso globales y herramientas prácticas de modelado.',
     courseTags: ['Innovación', 'Casos Reales', 'Modelado 3D', 'SIG'],
@@ -99,6 +157,64 @@ const dict = {
     course: 'Course',
     networkTab: 'Network',
     resources: 'Resources',
+    // Network Section
+    networkTitle: 'The Network',
+    networkDesc1: 'The LAND-CASCADES International Research Network will focus on advancing global understanding and resilience to landslide dam hazards, with a primary emphasis on the Andes mountain range.',
+    networkDesc2: 'The network achieves this through interdisciplinary research, data exchange, and capacity building, promoting scientific excellence in the study of natural landslide-induced damming and outburst flood dynamics. LAND-CASCADES will facilitate international collaboration across geosciences, hydrology, engineering, and disaster risk management.',
+    networkDesc3: 'The overall objective of LAND-CASCADES is to establish a comprehensive cross-border framework to understand and mitigate one of the most complex and destructive natural hazards in mountainous regions. This ambitious project seeks to unify researchers and professionals globally, fostering collaboration and knowledge exchange to advance our understanding and response capabilities to landslides in these environments.',
+    networkDesc4: 'This solid foundation will facilitate the standardization of methodologies for hazard assessment, monitoring, and breach modeling across a variety of terrains and climatic contexts. Knowledge exchange among academic institutions, government agencies, and local communities will improve the preparedness and response of vulnerable mountain communities, helping to reduce the impact of natural hazards.',
+
+    // Course Section - Intro
+    courseSectionTitle: 'The Course',
+    courseIntro: 'The LAND-CASCADES Scientific and Technical Training on Landslide Dammed Lakes is planned to take place during November 2026 in Mendoza, Argentina.',
+    courseDurationTitle: '4.3. Duration and Format',
+    courseLength: 'Duration: 4 days (can be adapted to 3 or 5 days)',
+    courseFormat: 'Format: Hybrid (in-person + virtual modules) including a training seminar and a field excursion',
+    courseLocation: 'Location: National University of Cuyo, Mendoza, Argentina',
+    courseFieldTrip: 'Field trip: Along the Mendoza-Aconcagua River sites near paleo-landslides, active landslides, dammed lakes, and outburst flood deposits.',
+
+    // Course Section - Activities
+    courseActivitiesTitle: '4.3. Activity Plan',
+    courseActivitiesIntro: 'This workshop will include a 1-2 day training course for PhD students and early career researchers (ECRs), and a field trip across the Andes from Mendoza (Argentina) to Los Andes (Chile).',
+    courseSeminarsTitle: 'a. Training course seminars',
+    courseDay1Title: 'Day One',
+    courseDay1Morning: 'Morning - Fundamentals and Global Context',
+    courseDay1MorningItems: [
+      'Introduction to landslide processes and damming mechanisms',
+      'Types of damming',
+      'Historical case studies',
+      'Global distribution and importance',
+      'Group discussion: regional vulnerabilities'
+    ],
+    courseDay1Afternoon: 'Afternoon - Geotechnical and Hydrological Aspects',
+    courseDay1AfternoonItems: [
+      'Slope stability and failure mechanics',
+      'Sediment transport and reservoir dynamics',
+      'Hydrological modeling of lake formation',
+      'Types of dam breach',
+      'Practice: Dam stability indices'
+    ],
+    courseDay2Title: 'Day Two',
+    courseDay2Morning: 'Morning - Remote Sensing and GIS Applications',
+    courseDay2MorningItems: [
+      'Satellite image interpretation (e.g., Sentinel, Landsat)',
+      'DEM analysis and dam volume estimation',
+      'GIS-based hazard mapping',
+      'Lab session: mapping a real dammed lake'
+    ],
+    courseDay2Afternoon: 'Afternoon - Risk Assessment and Breach Modeling',
+    courseDay2AfternoonItems: [
+      'Dam breach scenarios and flood wave propagation',
+      'Use of HEC-RAS, FLO-2D, or similar tools',
+      'Vulnerability and exposure analysis',
+      'Practice: simulate an outburst flood event'
+    ],
+    courseFieldTitle: 'b. Binational Field Trip across the Andes (32°S)',
+    courseFieldValley1: 'Mendoza River Valley (Argentina)',
+    courseFieldValley2: 'Las Cuevas River Valley (Argentina)',
+    courseFieldValley3: 'Aconcagua River Valley (Chile)',
+    courseFieldValley4: 'Blanco River Valley (Argentina)',
+    courseFieldReturn: 'Return to Mendoza',
     courseDescTitle: 'Course Description',
     courseDesc: 'This intensive program addresses the complex dynamics of landslide dams and associated cascading hazards. Participants will explore innovative risk assessment methodologies, integrating global case studies and practical modeling tools.',
     courseTags: ['Innovation', 'Real Cases', '3D Modeling', 'GIS'],
@@ -419,6 +535,101 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
           </div>
         </section>
 
+        {/* Course Intro */}
+        <section className="px-6 py-8">
+          <h3 className="text-2xl font-black text-white mb-4 flex items-center gap-3">
+            <div className="w-2 h-8 bg-primary rounded-full"></div>
+            {t.courseSectionTitle}
+          </h3>
+          <p className="text-slate-300 leading-relaxed text-base font-medium mb-8">
+            {t.courseIntro}
+          </p>
+
+          {/* Main Course Details */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-regular mb-6 text-white">{t.courseDurationTitle}</h3>
+            <div className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-white/10 space-y-4 text-slate-300 text-lg">
+              <p><strong className="text-white">Duración / Length:</strong> {t.courseLength.split(': ')[1]}</p>
+              <p><strong className="text-white">Formato / Format:</strong> {t.courseFormat.split(': ')[1]}</p>
+              <p><strong className="text-white">Ubicación / Location:</strong> {t.courseLocation.split(': ')[1]}</p>
+              <p><strong className="text-white">Salida de Campo / Field Trip:</strong> {t.courseFieldTrip.split(': ')[1]}</p>
+            </div>
+          </div>
+
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl font-light mb-6 text-white">{t.courseActivitiesTitle}</h2>
+            <p className="text-xl text-slate-300">{t.courseActivitiesIntro}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="bg-slate-800/50 backdrop-blur p-8 rounded-2xl border border-white/10">
+              <h3 className="text-2xl font-semibold mb-6 text-indigo-400">{t.courseSeminarsTitle}</h3>
+
+              <div className="mb-8">
+                <h4 className="text-xl font-medium text-white mb-4 border-b border-slate-700 pb-2">{t.courseDay1Title}</h4>
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-emerald-400 block mb-2">{t.courseDay1Morning}</strong>
+                    <ul className="list-disc pl-5 space-y-1 text-slate-300">
+                      {t.courseDay1MorningItems.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                  </div>
+                  <div>
+                    <strong className="text-emerald-400 block mb-2">{t.courseDay1Afternoon}</strong>
+                    <ul className="list-disc pl-5 space-y-1 text-slate-300">
+                      {t.courseDay1AfternoonItems.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-medium text-white mb-4 border-b border-slate-700 pb-2">{t.courseDay2Title}</h4>
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-emerald-400 block mb-2">{t.courseDay2Morning}</strong>
+                    <ul className="list-disc pl-5 space-y-1 text-slate-300">
+                      {t.courseDay2MorningItems.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                  </div>
+                  <div>
+                    <strong className="text-emerald-400 block mb-2">{t.courseDay2Afternoon}</strong>
+                    <ul className="list-disc pl-5 space-y-1 text-slate-300">
+                      {t.courseDay2AfternoonItems.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 backdrop-blur p-8 rounded-2xl border border-white/10 h-fit sticky top-24">
+              <h3 className="text-2xl font-semibold mb-6 text-amber-400">{t.courseFieldTitle}</h3>
+              <ul className="space-y-6">
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-700 text-slate-300 font-bold mr-4 shrink-0">1</span>
+                  <div className="text-slate-300 text-lg pt-1">{t.courseFieldValley1}</div>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-700 text-slate-300 font-bold mr-4 shrink-0">2</span>
+                  <div className="text-slate-300 text-lg pt-1">{t.courseFieldValley2}</div>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-700 text-slate-300 font-bold mr-4 shrink-0">3</span>
+                  <div className="text-slate-300 text-lg pt-1">{t.courseFieldValley3}</div>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-700 text-slate-300 font-bold mr-4 shrink-0">4</span>
+                  <div className="text-slate-300 text-lg pt-1">{t.courseFieldValley4}</div>
+                </li>
+                <li className="flex items-start border-t border-slate-700 pt-6 mt-6">
+                  <div className="text-white font-medium text-lg text-center w-full">{t.courseFieldReturn}</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </section>
+
         {/* Download Action */}
         <section className="px-6 pb-12 pt-4">
           <button className="w-full md:w-auto flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-orange-600 transition-colors shadow-xl shadow-primary/20 active:scale-[0.98]">
@@ -472,6 +683,17 @@ const RedPage = ({ lang, key }: { lang: Lang, key?: string }) => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Network Description */}
+      <section className="p-6">
+        <h2 className="text-3xl font-black tracking-tight text-white mb-6">{t.networkTitle}</h2>
+        <div className="prose prose-invert max-w-none prose-lg text-slate-300">
+          <p className="mb-6">{t.networkDesc1}</p>
+          <p className="mb-6">{t.networkDesc2}</p>
+          <p className="mb-6">{t.networkDesc3}</p>
+          <p>{t.networkDesc4}</p>
         </div>
       </section>
 
