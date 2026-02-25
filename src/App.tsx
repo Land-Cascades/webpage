@@ -14,16 +14,20 @@ import {
   ShieldAlert,
   Microscope,
   Mountain,
-  Download,
   FileText,
-  Video
+  Video,
+  Droplets,
+  Building2,
+  Mail,
+  Download
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import atuelImg from './assets/images/atuel.jpg';
+import edierImg from './assets/images/edier.png';
 import bayaImg from './assets/images/baya.jpg';
 import lagoImg from './assets/images/lago.png';
 import sosneadoImg from './assets/images/sosneado.png';
-import inquaLogoImg from './assets/images/inqua_logo.jpg';
+import inquaLogoImg from './assets/images/inqua_logo.png';
 
 // --- i18n Dictionary ---
 const dict = {
@@ -40,37 +44,39 @@ const dict = {
     researchAxes: 'Ejes de Investigación',
     axis1: 'Amenazas de origen Geológico',
     axis1Desc: 'Evaluación de amenazas y dinámica de laderas.',
-    axis2: 'Cooperación',
-    axis2Desc: 'Sinergias entre instituciones globales.',
+    axis2: 'Flujos de Escombros',
+    axis2Desc: 'Dinámica y mitigación de flujos torrenciales.',
     axis3: 'Gestión de Riesgos',
     axis3Desc: 'Protocolos de mitigación y resiliencia.',
-    axis4: 'Investigación',
-    axis4Desc: 'Generación de conocimiento científico superior.',
+    axis4: 'GLOF',
+    axis4Desc: 'Inundaciones por desborde de lagos glaciares (Glacial Lake Outburst Floods).',
     fundedBy: 'Financiado por',
+    coordinatorsTitle: 'Coordinadores de la Red',
+    membersTitle: 'Miembros de la Red',
     home: 'Inicio',
     course: 'Curso',
     networkTab: 'La Red',
     resources: 'Recursos',
     // Network Section
     networkTitle: 'La Red',
-    networkDesc1: 'La Red Internacional de Investigación LAND-CASCADES estará enfocada en el avance del entendimiento global y la resiliencia frente a las amenazas por lagos represados por deslizamientos, con énfasis principal en la cordillera de los Andes.',
-    networkDesc2: 'La red logra esto a través de investigación interdisciplinaria, intercambio de datos y desarrollo de capacidades, promoviendo la excelencia científica en el estudio del represamiento natural inducido por deslizamientos y la dinámica de las inundaciones por desembalse. LAND-CASCADES facilitará una colaboración internacional en geociencias, hidrología, ingeniería y gestión del riesgo de desastres.',
+    networkDesc1: 'La Red Internacional de Investigación LAND-CASCADES esta enfocada en el avance del entendimiento global y la resiliencia frente a las amenazas por deslizamientos y fenómenos concatenadas en la cordillera de los Andes.',
+    networkDesc2: 'La red logra esto a través de investigación interdisciplinaria, intercambio de datos y desarrollo de capacidades, promoviendo la excelencia científica en el estudio del deslizamientos y la dinámica amenazas en cadena. LAND-CASCADES facilitará una colaboración internacional en geociencias, hidrología, ingeniería y gestión del riesgo de desastres.',
     networkDesc3: 'El objetivo general de LAND-CASCADES es establecer un marco transfronterizo integral para comprender y mitigar una de las amenazas naturales más complejas y destructivas en regiones montañosas. Este ambicioso proyecto busca unificar investigadores y profesionales a nivel mundial, fomentando la colaboración y el intercambio de conocimientos para avanzar en nuestra comprensión y capacidad de respuesta ante deslizamientos en estos entornos.',
-    networkDesc4: 'Esta base sólida facilitará la estandarización de metodologías para la evaluación de amenazas, monitoreo y modelación de rupturas en una variedad de terrenos y contextos climáticos. El intercambio de conocimientos entre instituciones académicas, agencias gubernamentales y comunidades locales permitirá mejorar la preparación y respuesta de las comunidades de montaña vulnerables, ayudando a reducir el impacto de las amenazas naturales.',
+    networkDesc4: 'Esta base sólida facilitará la estandarización de metodologías para la evaluación de amenazas, monitoreo y modelación de deslizamiento en una variedad de terrenos y contextos climáticos de los Andes. El intercambio de conocimientos entre instituciones académicas, agencias gubernamentales y comunidades locales permitirá mejorar la preparación y respuesta de las comunidades de montaña vulnerables, ayudando a reducir el impacto de las amenazas naturales.',
 
     // Course Section - Intro
     courseSectionTitle: 'El Curso',
-    courseIntro: 'La Formación Científica y Técnica LAND-CASCADES sobre Lagos Represados por Deslizamientos está planeada para llevarse a cabo durante noviembre de 2026 en Mendoza, Argentina.',
-    courseDurationTitle: '4.3. Duración y Formato',
+    courseIntro: 'La Formación Científica y Técnica LAND-CASCADES sobre Lagos Represados por Deslizamientos está planeada para llevarse a cabo durante diciembre de 2026 en Mendoza, Argentina.',
+    courseDurationTitle: 'Duración y Formato',
     courseLength: 'Duración: 4 días (puede adaptarse a 3 o 5 días)',
     courseFormat: 'Formato: Híbrido (módulos presenciales + virtuales) incluyendo un seminario de formación y una excursión de campo',
     courseLocation: 'Ubicación: Universidad Nacional de Cuyo, Mendoza, Argentina',
     courseFieldTrip: 'Salida de campo: A lo largo de los sitios del Río Mendoza-Aconcagua cerca de paleo-deslizamientos, deslizamientos activos, lagos represados y depósitos de inundación por desembalse.',
 
     // Course Section - Activities
-    courseActivitiesTitle: '4.3. Plan de Actividades',
+    courseActivitiesTitle: 'Plan de Actividades',
     courseActivitiesIntro: 'Este taller incluirá un curso de capacitación durante 1-2 días para estudiantes de doctorado e investigadores jóvenes (ECRs), y una salida de campo a través de los Andes desde Mendoza (Argentina) hasta Los Andes (Chile).',
-    courseSeminarsTitle: 'a. Seminarios del curso de capacitación',
+    courseSeminarsTitle: 'Contenido teórico',
     courseDay1Title: 'Primer día',
     courseDay1Morning: 'Mañana - Fundamentos y Contexto Global',
     courseDay1MorningItems: [
@@ -103,7 +109,7 @@ const dict = {
       'Análisis de vulnerabilidad y exposición',
       'Práctica: simular un evento de inundación por desembalse'
     ],
-    courseFieldTitle: 'b. Salida de Campo Binacional a través de los Andes (32°S)',
+    courseFieldTitle: 'Salida de Campo',
     courseFieldValley1: 'Valle del Río Mendoza (Argentina)',
     courseFieldValley2: 'Valle del Río Las Cuevas (Argentina)',
     courseFieldValley3: 'Valle del Río Aconcagua (Chile)',
@@ -147,13 +153,15 @@ const dict = {
     researchAxes: 'Research Axes',
     axis1: 'Geological-Origin Hazards',
     axis1Desc: 'Hazard assessment and slope dynamics.',
-    axis2: 'Cooperation',
-    axis2Desc: 'Synergies between global institutions.',
+    axis2: 'Debris Flow',
+    axis2Desc: 'Dynamics and mitigation of debris flows.',
     axis3: 'Risk Management',
     axis3Desc: 'Mitigation protocols and resilience.',
-    axis4: 'Research',
-    axis4Desc: 'Generation of superior scientific knowledge.',
+    axis4: 'GLOF',
+    axis4Desc: 'Glacial Lake Outburst Floods.',
     fundedBy: 'Funded by',
+    coordinatorsTitle: 'Network Coordinators',
+    membersTitle: 'Network Members',
     home: 'Home',
     course: 'Course',
     networkTab: 'Network',
@@ -175,9 +183,9 @@ const dict = {
     courseFieldTrip: 'Field trip: Along the Mendoza-Aconcagua River sites near paleo-landslides, active landslides, dammed lakes, and outburst flood deposits.',
 
     // Course Section - Activities
-    courseActivitiesTitle: '4.3. Activity Plan',
+    courseActivitiesTitle: 'Activity Plan',
     courseActivitiesIntro: 'This workshop will include a 1-2 day training course for PhD students and early career researchers (ECRs), and a field trip across the Andes from Mendoza (Argentina) to Los Andes (Chile).',
-    courseSeminarsTitle: 'a. Training course seminars',
+    courseSeminarsTitle: 'Training course seminars',
     courseDay1Title: 'Day One',
     courseDay1Morning: 'Morning - Fundamentals and Global Context',
     courseDay1MorningItems: [
@@ -210,7 +218,7 @@ const dict = {
       'Vulnerability and exposure analysis',
       'Practice: simulate an outburst flood event'
     ],
-    courseFieldTitle: 'b. Binational Field Trip across the Andes (32°S)',
+    courseFieldTitle: 'Field Trip',
     courseFieldValley1: 'Mendoza River Valley (Argentina)',
     courseFieldValley2: 'Las Cuevas River Valley (Argentina)',
     courseFieldValley3: 'Aconcagua River Valley (Chile)',
@@ -243,6 +251,73 @@ const dict = {
   }
 };
 
+const coordinatorsData = [
+  {
+    name: 'Stella Moreiras',
+    institute: 'IANIGLA, CONICET / Universidad Nacional de Cuyo',
+    country: 'Argentina',
+    email: 'moreiras@mendoza-conicet.gob.ar',
+    domain: 'conicet.gov.ar',
+    photoUrl: 'https://aacg.ar/wp-content/uploads/2023/04/Stella-Moreiras.jpg'
+  },
+  {
+    name: 'Sergio Sepúlveda',
+    institute: 'Simon Fraser University, Department of Earth Sciences',
+    country: 'Canada',
+    email: 'ssepulve@sfu.ca',
+    domain: 'sfu.ca',
+    photoUrl: 'https://i1.rgstatic.net/ii/profile.image/11431281174672908-1689284526723_Q512/Sergio-Sepulveda.jpg'
+  },
+  {
+    name: 'Edier Aristizábal',
+    institute: 'Universidad Nacional de Colombia sede Medellín',
+    country: 'Colombia',
+    email: 'evaristizabalg@unal.edu.co',
+    domain: 'unal.edu.co',
+    photoUrl: edierImg
+  }
+];
+
+const membersData = [
+  { name: 'Pilar Jeanneret', institute: 'CONICET IANIGLA', country: 'Argentina', domain: 'conicet.gov.ar' },
+  { name: 'Edwin García', institute: 'Universidad de Antioquia', country: 'Colombia', domain: 'udea.edu.co' },
+  { name: 'Camilo Zapata', institute: 'Instituto de Investigacion Geologico y Energetico / University of Bristol', country: 'Ecuador / UK', domain: 'bristol.ac.uk' },
+  { name: 'Felipe Ugalde', institute: 'Universidad de Chile', country: 'Chile', domain: 'uchile.cl' },
+  { name: 'Alejandra Serey', institute: 'Universidad de O’Higgins', country: 'Chile', domain: 'uoh.cl' },
+  { name: 'Johnny Vega', institute: 'University of Medellín', country: 'Colombia', domain: 'udem.edu.co' },
+  { name: 'Daniel Ruiz', institute: 'EAFIT', country: 'Colombia', domain: 'eafit.edu.co' },
+  { name: 'George Fernandez Azevedo', institute: 'Universidade Federal do Maranhao', country: 'Brazil', domain: 'ufma.br' },
+  { name: 'Newton Moreira de Souza', institute: 'Universidad de Brasilia', country: 'Brazil', domain: 'unb.br' },
+  { name: 'Willem Viveen', institute: 'Pontificia Universidad Catolica Del Perú', country: 'Perú', domain: 'pucp.edu.pe' },
+  { name: 'Jorge Sanjurjo Sánchez', institute: 'Universidad de Coruña', country: 'Spain', domain: 'udc.es' },
+  { name: 'Luigi Lombardo', institute: 'University of Twente', country: 'The Netherlands', domain: 'utwente.nl' },
+  { name: 'Sandra Lucia Cobos Mora', institute: 'Universidad Católica de Cuenca', country: 'Ecuador', domain: 'ucacue.edu.ec' },
+  { name: 'Adam Emmer', institute: 'University of Charles', country: 'Czechia', domain: 'cuni.cz' },
+  { name: 'Jan Klimes', institute: 'IRSM CAS', country: 'Czechia', domain: 'irsm.cas.cz' },
+  { name: 'Martin Mergili', institute: 'BOKU', country: 'Austria', domain: 'boku.ac.at' },
+  { name: 'Carlo Tacconi Stefanelli', institute: 'University of Florence', country: 'Italy', domain: 'unifi.it' },
+  { name: 'Gustavo Villarosa', institute: 'CONICET, Universidad de Comahue', country: 'Argentina', domain: 'uncoma.edu.ar' },
+  { name: 'Debora Beigt', institute: 'CONICET, Universidad de Comahue', country: 'Argentina', domain: 'uncoma.edu.ar' },
+  { name: 'Agustin Quesada', institute: 'CONICET, Universidad de Comahue', country: 'Argentina', domain: 'uncoma.edu.ar' },
+  { name: 'Bruno Colavitto', institute: 'CIMA Research Foundation', country: 'Italy', domain: 'cimafoundation.org' },
+  { name: 'Laura Perucca', institute: 'Universidad Nacional de San Juan', country: 'Argentina', domain: 'unsj.edu.ar' },
+  { name: 'Romina Oronato', institute: 'Universidad Nacional de San Juan, CONICET', country: 'Argentina', domain: 'unsj.edu.ar' },
+  { name: 'Agustina Reato', institute: 'CONICET – CIEMEP– UNPSJB', country: 'Argentina', domain: 'unp.edu.ar' },
+  { name: 'Lorena Percudani', institute: 'CONICET – CIEMEP– UNPSJB', country: 'Argentina', domain: 'unp.edu.ar' },
+  { name: 'Angel Salas Colca', institute: 'INAIGEM', country: 'Peru', domain: 'inaigem.gob.pe' },
+  { name: 'Juan Carlos Torres Lázaro', institute: 'INAIGEM', country: 'Peru', domain: 'inaigem.gob.pe' },
+  { name: 'Diego Winocur', institute: 'University of Buenos Aires, CONICET', country: 'Argentina', domain: 'uba.ar' },
+  { name: 'Daniela Schmidt', institute: 'University of Buenos Aires, CONICET', country: 'Argentina', domain: 'uba.ar' },
+  { name: 'Nicholas Robert', institute: 'Department of State Growth', country: 'Tasmania, Australia', domain: 'stategrowth.tas.gov.au' },
+  { name: 'Juan Federico Ponce', institute: 'CADIC, CONICET', country: 'Argentina', domain: 'cadic.conicet.gov.ar' },
+  { name: 'Alejandro Montes', institute: 'Universidad Nacional de Tierra del Fuego', country: 'Argentina', domain: 'untdf.edu.ar' },
+  { name: 'Maria Isabel Arango', institute: 'U. Potsdam', country: 'Colombia', domain: 'uni-potsdam.de' },
+  { name: 'Natalia Ríos', institute: 'Universidad Nacional de Sn Juan', country: 'Argentina', domain: 'unsj.edu.ar' },
+  { name: 'Carla Ginesta Torcivia', institute: 'Universidad Nacional de Sn Juan', country: 'Argentina', domain: 'unsj.edu.ar' },
+  { name: 'Dr. Anja Dufresne', institute: 'RWTH Aachen University', country: 'Netherland', domain: 'rwth-aachen.de' },
+  { name: 'Andrea Wolter', institute: 'Earth Sciences', country: 'New Zealand', domain: '' }
+];
+
 type Lang = 'es' | 'en';
 
 // --- Shared Components ---
@@ -271,7 +346,7 @@ const Navbar = ({ onMenuClick, showBack, onBack, lang, setLang }: { onMenuClick?
     <div className="flex items-center gap-4">
       {!showBack && (
         <a href="https://inqua.org/" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center bg-white/5 px-2 py-1 rounded border border-white/10 hover:bg-white/10 transition-colors">
-          <img src={inquaLogoImg} alt="INQUA" className="h-4 object-contain" />
+          <img src={inquaLogoImg} alt="INQUA" className="h-6 object-contain" />
         </a>
       )}
 
@@ -483,23 +558,6 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
           </div>
         </section>
 
-        {/* Description */}
-        <section className="px-6 py-4 space-y-6">
-          <h3 className="text-2xl font-black text-white flex items-center gap-3">
-            <div className="w-2 h-8 bg-primary rounded-full"></div>
-            {t.courseDescTitle}
-          </h3>
-          <p className="text-slate-300 leading-relaxed text-base font-medium">
-            {t.courseDesc}
-          </p>
-          <div className="flex flex-wrap gap-2 pt-2">
-            {t.courseTags.map(tag => (
-              <span key={tag} className="px-4 py-2 bg-white/5 text-slate-200 text-xs font-bold rounded-xl border border-white/10 shadow-sm">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </section>
 
         {/* Target Audience */}
         <section className="mx-6 my-8 p-6 md:p-8 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl border border-primary/20 flex flex-col md:flex-row gap-6 items-start md:items-center">
@@ -564,19 +622,19 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="bg-slate-800/50 backdrop-blur p-8 rounded-2xl border border-white/10">
-              <h3 className="text-2xl font-semibold mb-6 text-indigo-400">{t.courseSeminarsTitle}</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-slate-200">{t.courseSeminarsTitle}</h3>
 
               <div className="mb-8">
                 <h4 className="text-xl font-medium text-white mb-4 border-b border-slate-700 pb-2">{t.courseDay1Title}</h4>
                 <div className="space-y-4">
                   <div>
-                    <strong className="text-emerald-400 block mb-2">{t.courseDay1Morning}</strong>
+                    <strong className="text-slate-400 block mb-2">{t.courseDay1Morning}</strong>
                     <ul className="list-disc pl-5 space-y-1 text-slate-300">
                       {t.courseDay1MorningItems.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                   </div>
                   <div>
-                    <strong className="text-emerald-400 block mb-2">{t.courseDay1Afternoon}</strong>
+                    <strong className="text-slate-400 block mb-2">{t.courseDay1Afternoon}</strong>
                     <ul className="list-disc pl-5 space-y-1 text-slate-300">
                       {t.courseDay1AfternoonItems.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
@@ -588,13 +646,13 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
                 <h4 className="text-xl font-medium text-white mb-4 border-b border-slate-700 pb-2">{t.courseDay2Title}</h4>
                 <div className="space-y-4">
                   <div>
-                    <strong className="text-emerald-400 block mb-2">{t.courseDay2Morning}</strong>
+                    <strong className="text-slate-400 block mb-2">{t.courseDay2Morning}</strong>
                     <ul className="list-disc pl-5 space-y-1 text-slate-300">
                       {t.courseDay2MorningItems.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                   </div>
                   <div>
-                    <strong className="text-emerald-400 block mb-2">{t.courseDay2Afternoon}</strong>
+                    <strong className="text-slate-400 block mb-2">{t.courseDay2Afternoon}</strong>
                     <ul className="list-disc pl-5 space-y-1 text-slate-300">
                       {t.courseDay2AfternoonItems.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
@@ -604,7 +662,7 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
             </div>
 
             <div className="bg-slate-800/50 backdrop-blur p-8 rounded-2xl border border-white/10 h-fit sticky top-24">
-              <h3 className="text-2xl font-semibold mb-6 text-amber-400">{t.courseFieldTitle}</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-slate-200">{t.courseFieldTitle}</h3>
               <ul className="space-y-6">
                 <li className="flex items-start">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-700 text-slate-300 font-bold mr-4 shrink-0">1</span>
@@ -669,9 +727,9 @@ const RedPage = ({ lang, key }: { lang: Lang, key?: string }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             { icon: ShieldAlert, title: t.axis1, desc: t.axis1Desc, color: "from-red-500/20 to-orange-500/5 text-red-500" },
-            { icon: Globe, title: t.axis2, desc: t.axis2Desc, color: "from-blue-500/20 to-cyan-500/5 text-blue-400" },
+            { icon: Mountain, title: t.axis2, desc: t.axis2Desc, color: "from-yellow-500/20 to-orange-500/5 text-yellow-500" },
             { icon: Activity, title: t.axis3, desc: t.axis3Desc, color: "from-emerald-500/20 to-green-500/5 text-emerald-400" },
-            { icon: Microscope, title: t.axis4, desc: t.axis4Desc, color: "from-purple-500/20 to-pink-500/5 text-purple-400" },
+            { icon: Droplets, title: t.axis4, desc: t.axis4Desc, color: "from-cyan-500/20 to-blue-500/5 text-cyan-400" },
           ].map((axis, i) => (
             <div key={i} className="bg-background-light p-6 rounded-3xl border border-white/5 flex flex-col gap-4 shadow-lg hover:-translate-y-1 transition-transform relative overflow-hidden group">
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${axis.color} blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity`} />
@@ -698,13 +756,96 @@ const RedPage = ({ lang, key }: { lang: Lang, key?: string }) => {
         </div>
       </section>
 
+      {/* Coordinators Section */}
+      <section className="p-6">
+        <h2 className="text-3xl font-black tracking-tight text-white mb-8">{t.coordinatorsTitle}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {coordinatorsData.map((coord, i) => (
+            <div key={i} className="bg-background-light p-6 rounded-3xl border border-white/10 hover:border-primary/50 transition-all shadow-2xl group relative overflow-hidden flex flex-col items-center text-center">
+              <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+              <div className="w-32 h-32 rounded-full mb-6 border-4 border-white/5 overflow-hidden relative z-10 group-hover:border-primary/50 transition-colors">
+                <img
+                  src={coord.photoUrl}
+                  alt={coord.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-2 relative z-10">{coord.name}</h3>
+              <div className="h-1 w-12 bg-primary rounded-full mb-4 relative z-10" />
+
+              <span className="text-sm text-slate-300 mb-4 flex-grow relative z-10 font-medium">
+                {coord.institute}
+              </span>
+
+              <div className="flex flex-col gap-2 w-full mt-auto relative z-10">
+                <span className="text-xs text-slate-400 flex items-center justify-center gap-1.5 font-medium">
+                  <MapPin size={14} className="text-slate-500" />
+                  {coord.country}
+                </span>
+                <a href={`mailto:${coord.email}`} className="text-xs text-primary hover:text-white flex items-center justify-center gap-1.5 font-medium transition-colors">
+                  <Mail size={14} />
+                  {coord.email}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Members Section */}
+      <section className="p-6 pt-12">
+        <h2 className="text-3xl font-black tracking-tight text-white mb-8">{t.membersTitle}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {membersData.map((member, i) => (
+            <div key={i} className="bg-background-light p-4 rounded-3xl border border-white/5 flex items-center gap-4 hover:border-primary/30 hover:bg-white/5 transition-all shadow-lg group">
+              <div className="w-16 h-16 flex-shrink-0 bg-white/5 rounded-2xl flex items-center justify-center overflow-hidden border border-white/10 relative">
+                {member.domain ? (
+                  <>
+                    <img
+                      src={`https://logo.clearbit.com/${member.domain}`}
+                      alt={member.institute}
+                      className="w-10 h-10 object-contain relative z-10 transition-transform group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        if (e.currentTarget.nextElementSibling) {
+                          e.currentTarget.nextElementSibling.classList.remove('hidden');
+                        }
+                      }}
+                    />
+                    <Building2 className="text-slate-500 w-8 h-8 hidden absolute z-0" />
+                  </>
+                ) : (
+                  <Building2 className="text-slate-500 w-8 h-8 transition-transform group-hover:scale-110" />
+                )}
+              </div>
+              <div className="flex flex-col overflow-hidden w-full">
+                <span className="font-bold text-white text-base truncate" title={member.name}>{member.name}</span>
+                <span className="text-xs text-primary font-medium truncate mt-0.5" title={member.institute}>
+                  {member.domain ? (
+                    <a href={`https://${member.domain}`} target="_blank" rel="noopener noreferrer" className="hover:underline">{member.institute}</a>
+                  ) : (
+                    member.institute
+                  )}
+                </span>
+                <span className="text-xs text-slate-400 flex items-center gap-1.5 mt-2 font-medium truncate">
+                  <MapPin size={12} className="text-slate-500" />
+                  {member.country}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Footer Sponsors */}
       <section className="p-12 text-center mt-auto">
         <p className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8">{t.fundedBy}</p>
         <div className="flex flex-col items-center gap-6">
           <div className="bg-white/5 p-8 rounded-3xl border border-white/10 inline-flex flex-col items-center shadow-2xl backdrop-blur-md">
             <a href="https://inqua.org/" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
-              <img src={inquaLogoImg} alt="INQUA Logo" className="h-16 object-contain mix-blend-screen" />
+              <img src={inquaLogoImg} alt="INQUA Logo" className="h-16 object-contain opacity-90 rounded-full" />
             </a>
             <div className="h-1.5 w-16 bg-primary rounded-full mt-4 mb-4" />
             <span className="text-xs text-slate-400 font-medium max-w-[200px] leading-relaxed">
