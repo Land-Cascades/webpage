@@ -240,7 +240,7 @@ const HomePage = ({ onCourseClick, lang, key }: { onCourseClick: () => void, lan
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(rgba(10, 15, 22, 0.6) 0%, rgba(10, 15, 22, 1) 100%), url(${sosneadoImg})`,
+            backgroundImage: `linear-gradient(rgba(10, 15, 22, 0.3) 0%, rgba(10, 15, 22, 0.85) 100%), url(${sosneadoImg})`,
           }}
         />
         <div className="relative z-10 flex flex-col gap-6 max-w-3xl items-center mt-8">
@@ -330,7 +330,7 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(0deg, rgba(10, 15, 22, 1) 0%, rgba(10, 15, 22, 0.6) 50%, rgba(10, 15, 22, 0.2) 100%), url(${lagoImg})`,
+            backgroundImage: `linear-gradient(0deg, rgba(10, 15, 22, 0.95) 0%, rgba(10, 15, 22, 0.3) 60%, rgba(10, 15, 22, 0) 100%), url(${lagoImg})`,
           }}
         />
         <div className="relative z-10 flex flex-col gap-4 max-w-4xl mx-auto w-full">
