@@ -138,7 +138,17 @@ const dict = {
     resource3: 'Resultados de Investigación',
     resource3Desc: 'Publicaciones de la red LAND-CASCADES',
     courseDate: '1-4 Dic, 2026',
-    specialized: 'Curso 2026'
+    specialized: 'Curso 2026',
+    grantsTitle: 'Becas y Postulaciones',
+    grantsSubtitle: 'Se ofrecen becas para estudiantes de doctorado y jóvenes investigadores.',
+    grantsIntro: 'Se proporcionarán becas de viaje. Para postularse, por favor envíe un correo electrónico a andeanlandslides@gmail.com con el asunto "Travel grant" y adjunte los siguientes documentos:',
+    grantsDoc1: 'Una carta de motivación explicando cómo se relaciona su investigación con el tema del curso/salida de campo y cómo esta capacitación impactaría su desarrollo académico.',
+    grantsDoc2: 'Su currículum vitae (CV).',
+    grantsDoc3: 'Costo tentativo del viaje a Mendoza, Argentina.',
+    grantsDeadlineLabel: 'Fecha límite de postulación',
+    grantsDeadlineDate: '30 de septiembre de 2026',
+    grantsAwardLabel: 'Publicación de beneficiarios',
+    grantsAwardDate: '15 de octubre de 2026'
   },
   en: {
     network: 'International Research Network',
@@ -247,7 +257,17 @@ const dict = {
     resource3: 'Research Results',
     resource3Desc: 'Publications from the LAND-CASCADES network',
     courseDate: 'Dec 1-4, 2026',
-    specialized: 'Course 2026'
+    specialized: 'Course 2026',
+    grantsTitle: 'Grants & Fellowships',
+    grantsSubtitle: 'Fellowships are available for PhD students and Early-career researchers.',
+    grantsIntro: 'Travel grants will be provided. To apply, please email andeanlandslides@gmail.com with "Travel grant" in the subject line and attach the following documents:',
+    grantsDoc1: 'A letter of motivation explaining how your research relates to the course/field trip topic and how this training would impact your academic development.',
+    grantsDoc2: 'Your CV.',
+    grantsDoc3: 'Tentative cost of travelling to Mendoza, Argentina.',
+    grantsDeadlineLabel: 'Deadline for Grant postulation',
+    grantsDeadlineDate: 'September 30th, 2026',
+    grantsAwardLabel: 'List of award grants',
+    grantsAwardDate: 'October 15th, 2026'
   }
 };
 
@@ -687,6 +707,64 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
             </div>
           </div>
 
+        </section>
+
+        {/* Grants Section */}
+        <section className="px-6 py-8">
+          <div className="bg-background-light p-6 md:p-8 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden group">
+            {/* Background decorative gradient */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent blur-3xl rounded-full opacity-50 pointer-events-none" />
+            
+            <h3 className="text-2xl font-black text-white mb-2 flex items-center gap-3">
+              <div className="w-2 h-8 bg-primary rounded-full"></div>
+              {t.grantsTitle}
+            </h3>
+            <p className="text-primary font-semibold text-base mb-6">
+              {t.grantsSubtitle}
+            </p>
+            
+            <p className="text-slate-300 mb-6 text-sm leading-relaxed">
+              {t.grantsIntro.split('andeanlandslides@gmail.com')[0]}
+              <a href="mailto:andeanlandslides@gmail.com" className="text-primary hover:underline font-bold">
+                andeanlandslides@gmail.com
+              </a>
+              {t.grantsIntro.split('andeanlandslides@gmail.com')[1]}
+            </p>
+
+            <ul className="space-y-4 mb-8">
+              {[t.grantsDoc1, t.grantsDoc2, t.grantsDoc3].map((doc, idx) => (
+                <li key={idx} className="flex gap-4 items-start bg-white/3 p-4 rounded-xl border border-white/5">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                    <FileText size={18} />
+                  </div>
+                  <p className="text-sm text-slate-300 leading-relaxed font-medium">
+                    <span className="text-white font-bold mr-1">({idx + 1})</span> {doc}
+                  </p>
+                </li>
+              ))}
+            </ul>
+
+            <div className="grid sm:grid-cols-2 gap-4 bg-white/3 p-5 rounded-2xl border border-white/5">
+              <div className="flex gap-3 items-center">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0">
+                  <Calendar size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t.grantsDeadlineLabel}</p>
+                  <p className="text-sm text-white font-bold">{t.grantsDeadlineDate}</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-center border-t sm:border-t-0 sm:border-l border-white/10 pt-4 sm:pt-0 sm:pl-4">
+                <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 shrink-0">
+                  <GraduationCap size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t.grantsAwardLabel}</p>
+                  <p className="text-sm text-white font-bold">{t.grantsAwardDate}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Download Action */}
