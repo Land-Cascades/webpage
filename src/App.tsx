@@ -767,13 +767,7 @@ const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
           </div>
         </section>
 
-        {/* Download Action */}
-        <section className="px-6 pb-12 pt-4">
-          <button className="w-full md:w-auto flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-orange-600 transition-colors shadow-xl shadow-primary/20 active:scale-[0.98]">
-            <Download size={24} />
-            {t.downloadSyllabus}
-          </button>
-        </section>
+
       </div>
     </motion.div>
   );
