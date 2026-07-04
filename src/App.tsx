@@ -28,6 +28,7 @@ import bayaImg from './assets/images/baya.jpg';
 import lagoImg from './assets/images/lago.png';
 import sosneadoImg from './assets/images/sosneado.png';
 import inquaLogoImg from './assets/images/inqua_logo.png';
+import courseImg from './assets/images/course.jpeg';
 
 // --- i18n Dictionary ---
 const dict = {
@@ -520,6 +521,42 @@ const HomePage = ({ onCourseClick, lang, key }: { onCourseClick: () => void, lan
               <Mountain size={18} className="text-primary" />
               <span className="text-sm font-semibold text-white">{t.field}</span>
             </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Course Flyer Section */}
+      <section className="px-4 md:px-8 mt-10 mb-6 max-w-4xl mx-auto w-full relative z-20">
+        <motion.div
+          whileHover={{ y: -5, scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
+          onClick={onCourseClick}
+          className="cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-background-light shadow-2xl transition-all hover:border-primary/50 relative group flex flex-col"
+        >
+          {/* Cover image wrapper */}
+          <div className="relative overflow-hidden w-full bg-[#0a0f16]">
+            <img
+              src={courseImg}
+              alt="Course Flyer"
+              className="w-full h-auto object-contain max-h-[700px] mx-auto group-hover:scale-[1.01] transition-transform duration-500"
+            />
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f16]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+          </div>
+
+          {/* Call to action panel */}
+          <div className="p-6 bg-background-light/95 backdrop-blur-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-t border-white/5">
+            <div>
+              <span className="text-[10px] bg-primary/20 text-primary font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">
+                Flyer Oficial / Official Flyer
+              </span>
+              <h4 className="text-white font-black text-lg leading-tight uppercase">{t.courseTitle}</h4>
+              <p className="text-xs text-slate-400 font-medium mt-1">{t.courseDateLoc}</p>
+            </div>
+            <button className="flex bg-primary text-white text-xs font-black px-6 py-3.5 rounded-2xl items-center gap-2 group-hover:bg-orange-600 hover:bg-orange-600 transition-colors uppercase tracking-widest shadow-lg shadow-primary/20 shrink-0 self-stretch sm:self-auto justify-center">
+              {t.course}
+              <ArrowLeft className="rotate-180" size={14} />
+            </button>
           </div>
         </motion.div>
       </section>
