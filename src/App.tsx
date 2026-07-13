@@ -438,7 +438,7 @@ const BottomNav = ({ activeTab, onTabChange, lang }: { activeTab: string, onTabC
 };
 
 // --- Pages ---
-const HomePage = ({ onCourseClick, lang, key }: { onCourseClick: () => void, lang: Lang, key?: string }) => {
+const HomePage = ({ onCourseClick, lang }: { onCourseClick: () => void, lang: Lang, key?: string }) => {
   const t = dict[lang];
   return (
     <motion.div
@@ -564,7 +564,7 @@ const HomePage = ({ onCourseClick, lang, key }: { onCourseClick: () => void, lan
   );
 };
 
-const CourseDetailPage = ({ lang, key }: { lang: Lang, key?: string }) => {
+const CourseDetailPage = ({ lang }: { lang: Lang, key?: string }) => {
   const t = dict[lang];
   return (
     <motion.div
