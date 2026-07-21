@@ -19,7 +19,9 @@ import {
   Droplets,
   Building2,
   Mail,
-  Download
+  Download,
+  Users,
+  Languages
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import atuelImg from './assets/images/atuel.jpg';
@@ -39,7 +41,7 @@ const dict = {
     courseAnnouncement: 'Anuncio de Curso Especializado',
     courseTitle: 'Presas de Deslizamiento y Amenazas en Cascada',
     courseDateLoc: 'Del 1 al 4 de diciembre de 2026 en Mendoza, Argentina.',
-    courseTarget: 'Dirigido a doctorandos y jóvenes investigadores. Incluye conferencias y trabajo de campo en la cordillera de los Andes.',
+    courseTarget: 'Curso abierto a todo público, con prioridad para doctorandos e investigadores jóvenes de América Latina. Cupos limitados por la logística en terreno. Incluye conferencias en español e inglés y trabajo de campo en la cordillera de los Andes.',
     academic: 'Académico',
     field: 'Campo',
     researchAxes: 'Ejes de Investigación',
@@ -119,7 +121,14 @@ const dict = {
     courseDescTitle: 'Descripción del Curso',
     courseDesc: 'Este programa intensivo aborda la dinámica compleja de las presas generadas por deslizamientos y los peligros en cascada asociados. Los participantes explorarán metodologías innovadoras para la evaluación de riesgos, integrando estudios de caso globales y herramientas prácticas de modelado.',
     courseTags: ['Innovación', 'Casos Reales', 'Modelado 3D', 'SIG'],
-    targetAudience: 'Diseñado específicamente para estudiantes de doctorado e investigadores jóvenes en geociencias, ingeniería civil y gestión de desastres.',
+    targetAudience: 'Curso abierto a todo público, pero con prioridad para estudiantes de doctorado e investigadores jóvenes de América Latina en geociencias, ingeniería civil y gestión de desastres.',
+    courseNoticeTitle: 'Información Importante',
+    courseNoticePriorityTitle: 'Curso abierto con prioridad para Latinoamérica',
+    courseNoticePriority: 'El curso está abierto a todo público, pero es prioritario para estudiantes doctorales e investigadores jóvenes de América Latina.',
+    courseNoticeLimitedTitle: 'Cupos limitados',
+    courseNoticeLimited: 'El número de participantes es limitado debido a la logística de la salida de campo.',
+    courseNoticeLanguageTitle: 'Charlas en español e inglés',
+    courseNoticeLanguage: 'Las charlas serán en español y en inglés, según el idioma de cada expositor.',
     academicProgram: 'Programa Académico',
     prog1: 'Conferencias Magistrales',
     prog1Desc: 'Fundamentos teóricos y dinámicas de flujos.',
@@ -158,7 +167,7 @@ const dict = {
     courseAnnouncement: 'Specialized Course Announcement',
     courseTitle: 'Landslide Dams and Cascading Hazards',
     courseDateLoc: 'From December 1 to 4, 2026 in Mendoza, Argentina.',
-    courseTarget: 'Aimed at PhD students and young researchers. Includes lectures and fieldwork in the Andes mountain range.',
+    courseTarget: 'Open to all, with priority given to PhD students and young researchers from Latin America. Limited seats due to field logistics. Includes lectures in Spanish and English and fieldwork in the Andes mountain range.',
     academic: 'Academic',
     field: 'Fieldwork',
     researchAxes: 'Research Axes',
@@ -238,7 +247,14 @@ const dict = {
     courseDescTitle: 'Course Description',
     courseDesc: 'This intensive program addresses the complex dynamics of landslide dams and associated cascading hazards. Participants will explore innovative risk assessment methodologies, integrating global case studies and practical modeling tools.',
     courseTags: ['Innovation', 'Real Cases', '3D Modeling', 'GIS'],
-    targetAudience: 'Designed specifically for PhD students and young researchers in geosciences, civil engineering, and disaster management.',
+    targetAudience: 'Open to all, but with priority given to PhD students and young researchers from Latin America in geosciences, civil engineering, and disaster management.',
+    courseNoticeTitle: 'Important Information',
+    courseNoticePriorityTitle: 'Open course, priority for Latin America',
+    courseNoticePriority: 'The course is open to all, but priority will be given to PhD students and young researchers from Latin America.',
+    courseNoticeLimitedTitle: 'Limited seats',
+    courseNoticeLimited: 'The number of participants is limited due to field trip logistics.',
+    courseNoticeLanguageTitle: 'Talks in Spanish and English',
+    courseNoticeLanguage: 'Talks will be given in Spanish and English, depending on each speaker\'s language.',
     academicProgram: 'Academic Program',
     prog1: 'Keynote Lectures',
     prog1Desc: 'Theoretical foundations and flow dynamics.',
@@ -521,6 +537,14 @@ const HomePage = ({ onCourseClick, lang }: { onCourseClick: () => void, lang: La
               <Mountain size={18} className="text-primary" />
               <span className="text-sm font-semibold text-white">{t.field}</span>
             </div>
+            <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10">
+              <Users size={18} className="text-primary" />
+              <span className="text-sm font-semibold text-white">{t.courseNoticeLimitedTitle}</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10">
+              <Languages size={18} className="text-primary" />
+              <span className="text-sm font-semibold text-white">{t.courseNoticeLanguageTitle}</span>
+            </div>
           </div>
         </motion.div>
       </section>
@@ -624,6 +648,31 @@ const CourseDetailPage = ({ lang }: { lang: Lang, key?: string }) => {
           <p className="text-slate-200 text-base leading-relaxed font-medium">
             {t.targetAudience}
           </p>
+        </section>
+
+        {/* Important Info */}
+        <section className="mx-6 my-8">
+          <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+            <div className="w-2 h-8 bg-primary rounded-full"></div>
+            {t.courseNoticeTitle}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { title: t.courseNoticePriorityTitle, desc: t.courseNoticePriority, icon: GraduationCap },
+              { title: t.courseNoticeLimitedTitle, desc: t.courseNoticeLimited, icon: Users },
+              { title: t.courseNoticeLanguageTitle, desc: t.courseNoticeLanguage, icon: Languages },
+            ].map((item, i) => (
+              <div key={i} className="bg-background-light p-5 rounded-2xl border border-white/5 flex flex-col gap-3 shadow-sm">
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  <item.icon size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-base mb-1">{item.title}</h4>
+                  <p className="text-sm text-slate-400 font-medium leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Academic Program */}
